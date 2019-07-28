@@ -1,0 +1,200 @@
+html, body {
+    padding:0;
+    margin:0;
+    height: 100%;
+    font-family: 'Abel', sans-serif;
+}
+
+/* SIDEBAR + NAV */
+
+div#hamburger {
+    text-align: left;
+    padding: 0.5rem;
+    position:absolute;
+    z-index:1000;
+}
+
+/* toggle nav */
+
+.toggle-nav-container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #999;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;  transform: rotate(-45deg) translate(-9px, 6px) ; }
+.change .bar2 {  opacity: 0; }
+.change .bar3 {  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;  transform: rotate(45deg) translate(-8px, -8px) ; }
+
+
+div#sidebar {
+    background-color: #eee;
+}
+
+div#logo {
+    margin:0.5rem;
+}
+
+div#sidebar nav {
+    margin:0;
+    padding:0;
+    position:absolute;
+    z-index:1000;
+    width:100%;
+    height:100%;
+    top:0;
+    left:-100%;
+    transition: left 0.5s;
+    background-color: #eee;
+    overflow: scroll;
+}
+
+div#sidebar nav h2 {
+    font-size: 1.1rem;
+    color:#999;
+    padding: 0.5rem 1rem 0 1rem;
+    margin:0 0 0 0.5rem;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+div#sidebar nav ul {
+    padding:0 1rem;
+    list-style-type: none;
+    margin:0 0 1rem 0.5rem;
+}
+
+div#sidebar nav a {
+    text-decoration: none;
+    color:#555;
+    transition: color 0.2s;
+}
+
+div#sidebar nav li.active::before  {
+    content: "\2022";  
+    color: #40B549; 
+    display: inline-block;
+    width: 0.7em; 
+    margin-left: -0.7em; 
+}
+
+div#sidebar nav a:hover {
+    color:#40B549;
+
+}
+
+/* MAIN AREA */
+
+div#mainarea {
+    height:100vh;
+    width:100%;
+    position:relative;
+    display:block;
+    float:left;
+}
+
+div#mainarea div#photolist {
+    height: 100%;
+    width:100%; 
+}
+
+div#mainarea div#photolist div.photo {
+    width:100%;
+    height:100%;
+    text-align: center;
+    float:left;
+}
+
+div#mainarea div#photolist div.content-slide {
+    width:90%;
+    height:100%;
+    overflow:show;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div#mainarea div#photolist div.content-slide .content-text {
+    padding:1rem;
+    float:left;
+    max-width:50%;
+}
+
+div#mainarea div#photolist div.content-slide .album-preview {
+    max-width: 45%;
+    float:left;
+}
+
+div#mainarea div#photolist img {
+    height:auto;
+    width:auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+div.message {
+    text-align: center;
+}
+
+/* content pages */
+
+div#content-page {
+    padding:2rem;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+    max-width:1200px;
+}
+
+div#content-page h1 {
+    grid-column-start: 1;
+    grid-column-end:3;
+    font-size: 2.5rem;
+    margin:0.5rem 0;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 800px) {
+
+    div#container {
+        display:grid;
+        grid-template-columns: 200px auto;
+        height:100%;
+    }
+
+    div#hamburger {
+        display:none;
+    }
+
+    div#sidebar {
+        float:left;
+    }
+
+    div#sidebar nav {
+        position:relative;
+        height:auto;
+        width:100%;
+        left:0;
+        overflow:auto;
+    }
+
+    div#mainarea {
+        margin-top:0;
+    }
+
+    div#mainarea div#photolist {
+        margin: 2%;
+        height: 90%;
+        width:90%;
+    }
+
+}
