@@ -11,6 +11,7 @@ $GLOBALS['arrAlbumsGeneral'] = array(
     array("abstract", "Abstract")
 );
 
+
 $GLOBALS['arrAlbumsLocation'] = array(
     array("new-york", "New York"),
     array("coney-island", "Coney Island"),
