@@ -18,6 +18,10 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101224902);</script>
+	<script async src="//static.getclicky.com/js"></script>
+
+
 </head>
 <body>
     <div id="container">

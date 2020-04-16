@@ -20,6 +20,7 @@ $GLOBALS['arrAlbumsLocation'] = array(
     array("nepal", "Nepal"),
     array("belgrade", "Belgrade"),
     array("serbia", "Serbia"),
+    array("dolomites", "Dolomites"),
     array("indonesia", "Indonesia"),
     array("sri-lanka", "Sri Lanka"),
     array("morocco", "Morocco"),
