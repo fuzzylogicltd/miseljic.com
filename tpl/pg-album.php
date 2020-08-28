@@ -14,11 +14,13 @@
         $sorter = '&sort=sort_highlights';
     }
 
-    //echo "album: " . $albumName . " :: " . $sorter;
-    //echo "photo: " . $imageNumber . "<br>";
+    // echo "album: " . $albumName . " :: " . $sorter;
+    // echo "photo: " . $imageNumber . "<br>";
 
         $query =  '/items/photos?filter[albums][contains]=' . $albumName . '&meta=result_count&fields=name,caption,photo.data.url,content_slide' . $sorter;
         $photos = json_decode(callAPI('GET', $query), true);
+
+        // echo ":" . $photos . ":";
 
         $totalPhotos = $photos['meta']['result_count'];
         $counter = 1;

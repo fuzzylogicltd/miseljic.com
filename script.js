@@ -41,3 +41,4 @@ function setUrl(index) {
     const newUrl = "/" + albumName + "/" + photoId;
     window.history.pushState("object or string", "Title", newUrl);
 }
+

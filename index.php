@@ -11,7 +11,7 @@ if (substr($path,-1) <> '/') { $path = $path . '/'; }
 $elements = explode('/', $path);
 
 if (empty($elements[0])) {
-    ShowAlbum('highlights','001');
+    ShowAlbum('street','001');
 } else { 
     $album = $elements[0];
     $photo = $elements[1];

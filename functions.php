@@ -1,16 +1,14 @@
 <?php
 
-$GLOBALS['base_url'] = 'https://api.miseljic.com/_';
+$GLOBALS['base_url'] = 'https://api.miseljic.com/api';
 $GLOBALS['photo_url'] = 'https://api.miseljic.com';
 
 $GLOBALS['arrAlbumsGeneral'] = array(
-    array("highlights", "Highlights"),
     array("street", "Street"),
     array("people", "People"),
     array("nature", "Nature"),
     array("abstract", "Abstract")
 );
-
 
 $GLOBALS['arrAlbumsLocation'] = array(
     array("new-york", "New York"),
