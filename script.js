@@ -3,6 +3,7 @@ var flkty = new Flickity('#photolist', {
     "wrapAround": true, 
     "pageDots": false, 
     "adaptiveHeight": true,
+    "lazyLoad": 2,
     on: {
         change: function (index) {
             setUrl(index);

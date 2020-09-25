@@ -2,6 +2,7 @@
 
 $GLOBALS['base_url'] = 'https://api.miseljic.com/api';
 $GLOBALS['photo_url'] = 'https://api.miseljic.com';
+$GLOBALS['auth_token'] = 'FKTIO3TG62FKRTO567FKWX2';
 
 $GLOBALS['arrAlbumsGeneral'] = array(
     array("street", "Street"),
@@ -56,7 +57,7 @@ function CallAPI($method, $query, $data = false)
 
     // Optional Authentication:
     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Bearer FKTIO3TG62FKRTO567FKWX2'));
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $GLOBALS['auth_token']));
 
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);

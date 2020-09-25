@@ -20,7 +20,7 @@
         $query =  '/items/photos?filter[albums][contains]=' . $albumName . '&meta=result_count&fields=name,caption,photo.data.url,content_slide' . $sorter;
         $photos = json_decode(callAPI('GET', $query), true);
 
-        // echo ":" . $photos . ":";
+        //echo ":" . $query . ":";
 
         $totalPhotos = $photos['meta']['result_count'];
         $counter = 1;
@@ -37,7 +37,7 @@
                                 echo '</div>';
                             } else { // an image
                                 echo '<div class="photo">';
-                                echo '<img src="' . $GLOBALS['photo_url'] . $photo['photo']['data']['url'] . '" alt="' . $photo['name'] . '">';
+                                echo '<img data-flickity-lazyload-src="' . $GLOBALS['photo_url'] . $photo['photo']['data']['url'] . '" alt="' . $photo['name'] . '">';
                                 echo '</div>';
                             }
 
