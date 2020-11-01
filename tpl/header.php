@@ -35,13 +35,18 @@
             </div>
             <nav id="mainnav">
                 <div id="logo">
-                    <img src="/img/logo.png" alt="Lazar Miseljic Photography">
+                    <a href="/">
+                        <img src="/img/logo.png" alt="Lazar Miseljic Photography">
+                    </a>
                 </div>
-                <h2>The Photos</h2>
+                <h2>Singles</h2>
                 <ul>
                     <?php
 
-                        foreach($GLOBALS['arrAlbumsGeneral'] as $arr){
+                        GetAlbums();
+                        GetStories();
+
+                        foreach($GLOBALS['arrAlbums'] as $arr){
                             if ($arr[0] == $albumName) {
                                 echo '<li class="active"><a href="/' .  $arr[0] . '" >' .  $arr[1] . '</a></li>';
                             } else {
@@ -51,10 +56,11 @@
                         } 
                     ?>
                 </ul>
-
+                
+                <h2>Stories</h2>
                 <ul>
                     <?php
-                        foreach($GLOBALS['arrAlbumsLocation'] as $arr){
+                        foreach($GLOBALS['arrStories'] as $arr){
                             if ($arr[0] == $albumName) {
                                 echo '<li class="active"><a href="/' . $arr[0] . '">' .  $arr[1] . '</a></li>';
                             } else {
@@ -64,7 +70,7 @@
                     ?>
                 </ul>
 
-                <h2>The Rest</h2>
+                <h2>Other</h2>
                 <ul>
                     <?php
                         foreach($GLOBALS['arrRest'] as $arr){

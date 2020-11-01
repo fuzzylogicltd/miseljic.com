@@ -4,35 +4,40 @@ $GLOBALS['base_url'] = 'https://api.miseljic.com/api';
 $GLOBALS['photo_url'] = 'https://api.miseljic.com';
 $GLOBALS['auth_token'] = 'FKTIO3TG62FKRTO567FKWX2';
 
-$GLOBALS['arrAlbumsGeneral'] = array(
-    array("street", "Street"),
-    array("people", "People"),
-    array("nature", "Nature"),
-    array("abstract", "Abstract")
-);
-
-$GLOBALS['arrAlbumsLocation'] = array(
-    array("new-york", "New York"),
-    array("coney-island", "Coney Island"),
-    array("western-usa", "Western USA"),
-    array("thailand", "Thailand"),
-    array("cambodia", "Cambodia"),
-    array("nepal", "Nepal"),
-    array("belgrade", "Belgrade"),
-    array("serbia", "Serbia"),
-    array("dolomites", "Dolomites"),
-    array("indonesia", "Indonesia"),
-    array("sri-lanka", "Sri Lanka"),
-    array("morocco", "Morocco"),
-    array("istanbul", "Istanbul"),
-    array("singapore", "Singapore"),
-    array("ex-yu", "Ex Yu"),
-    array("misc-eu", "Misc EU")
-);
+$GLOBALS['arrAlbums'] = array();
+$GLOBALS['arrStories'] = array();
 
 $GLOBALS['arrRest'] = array(
     array("pages/about-me", "About me")
 );
+
+function GetAlbums() {
+    $query =  '/items/albums?sort=sort';
+    $albums = json_decode(callAPI('GET', $query), true);
+
+    if (!empty($albums['data'])) { 
+        foreach ($albums['data'] as $album) {
+
+            $newAlbum = array($album['slug'], $album['name']);
+            array_push($GLOBALS['arrAlbums'], $newAlbum);
+            
+        }
+    }
+}
+
+function GetStories() {
+    $query =  '/items/stories?sort=sort';
+    $stories = json_decode(callAPI('GET', $query), true);
+
+    if (!empty($stories['data'])) { 
+        foreach ($stories['data'] as $story) {
+
+            $newAlbum = array($story['slug'], $story['name']);
+            array_push($GLOBALS['arrStories'], $newAlbum);
+            
+        }
+    }
+}
 
 function CallAPI($method, $query, $data = false)
 {

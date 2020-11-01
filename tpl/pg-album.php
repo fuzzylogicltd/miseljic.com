@@ -3,21 +3,17 @@
 <div id="mainarea">
     <?php
 
-    $sorter = '&sort=sort_location';
-    
 
-    if (in_array($albumName, array_column($GLOBALS['arrAlbumsGeneral'],0))) {
-        $sorter = '&sort=sort_album';
-    }
-
-    if ($albumName == 'highlights') {
-        $sorter = '&sort=sort_highlights';
+    if (in_array($albumName, array_column($GLOBALS['arrAlbums'],0))) {
+        $sorter = '&sort=album_sort';
+    } else {
+        $sorter = '&sort=story_sort';
     }
 
     // echo "album: " . $albumName . " :: " . $sorter;
     // echo "photo: " . $imageNumber . "<br>";
 
-        $query =  '/items/photos?filter[albums][contains]=' . $albumName . '&meta=result_count&fields=name,caption,photo.data.url,content_slide' . $sorter;
+        $query =  '/items/photos?filter[album][contains]=' . $albumName . '&meta=result_count&fields=name,caption,photo.data.url,content_slide' . $sorter;
         $photos = json_decode(callAPI('GET', $query), true);
 
         //echo ":" . $query . ":";
@@ -38,6 +34,7 @@
                             } else { // an image
                                 echo '<div class="photo">';
                                 echo '<img data-flickity-lazyload-src="' . $GLOBALS['photo_url'] . $photo['photo']['data']['url'] . '" alt="' . $photo['name'] . '">';
+                                echo '<div class="photo-caption">' . $photo['caption'] . '</div>';
                                 echo '</div>';
                             }
 
