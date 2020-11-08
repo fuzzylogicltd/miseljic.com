@@ -6,14 +6,16 @@
 
     if (in_array($albumName, array_column($GLOBALS['arrAlbums'],0))) {
         $sorter = '&sort=album_sort';
+        $album_filter = 'filter[album.slug][contains]=' . $albumName;
     } else {
         $sorter = '&sort=story_sort';
+        $album_filter = 'filter[story.slug][contains]=' . $albumName;
     }
 
     // echo "album: " . $albumName . " :: " . $sorter;
     // echo "photo: " . $imageNumber . "<br>";
 
-        $query =  '/items/photos?filter[album][contains]=' . $albumName . '&meta=result_count&fields=name,caption,photo.data.url,content_slide' . $sorter;
+        $query =  '/items/photos?' . $album_filter . '&meta=result_count&fields=name,caption,photo.data.url,content_slide' . $sorter;
         $photos = json_decode(callAPI('GET', $query), true);
 
         //echo ":" . $query . ":";

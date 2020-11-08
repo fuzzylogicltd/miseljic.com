@@ -44,8 +44,7 @@
                     <?php
 
                         GetAlbums();
-                        GetStories();
-
+                        
                         foreach($GLOBALS['arrAlbums'] as $arr){
                             if ($arr[0] == $albumName) {
                                 echo '<li class="active"><a href="/' .  $arr[0] . '" >' .  $arr[1] . '</a></li>';
@@ -60,6 +59,9 @@
                 <h2>Stories</h2>
                 <ul>
                     <?php
+
+                        GetStories();
+
                         foreach($GLOBALS['arrStories'] as $arr){
                             if ($arr[0] == $albumName) {
                                 echo '<li class="active"><a href="/' . $arr[0] . '">' .  $arr[1] . '</a></li>';
