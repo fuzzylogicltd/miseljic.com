@@ -26,7 +26,7 @@ function GetAlbums() {
 }
 
 function GetStories() {
-    $query =  '/items/stories?sort=sort';
+    $query =  '/items/stories?sort=sort&status=published';
     $stories = json_decode(callAPI('GET', $query), true);
 
     if (!empty($stories['data'])) { 
