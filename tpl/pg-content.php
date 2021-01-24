@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="photo">
-                <?php echo '<img src="' . $result['photo']['data']['thumbnails'][1]['url'] . '" >'; ?>
+                <?php echo '<img src="' . $result['photo']['data']['thumbnails'][5]['url'] . '" >'; ?>
                 </div>
 
             </div>
