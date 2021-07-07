@@ -37,8 +37,7 @@ function GetStories() {
     }
 }
 
-function CallAPI($method, $query, $data = false)
-{
+function CallAPI($method, $query, $data = false) {
 
     $url = $GLOBALS['base_url'] . $query;
     $curl = curl_init();

@@ -49,7 +49,6 @@
                             } else {
                                 echo '<li><a href="/' .  $arr[0] . '">' .  $arr[1] . '</a></li>';
                             }
-                            
                         } 
                     ?>
                 </ul>
