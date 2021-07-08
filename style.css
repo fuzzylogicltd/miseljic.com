@@ -131,6 +131,8 @@ div#mainarea div#photolist div.content-slide .content-text {
     padding:1rem;
     float:left;
     max-width:50%;
+    max-height:90%;
+    overflow:auto;
 }
 
 div#mainarea div#photolist div.content-slide .album-preview {
